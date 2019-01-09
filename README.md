@@ -92,7 +92,7 @@ yii fixture/load "*"
 ```bash
 mysqld: Can't create/write to file '/var/lib/mysql/is_writable' (Errcode: 13 - Permission denied)
 ```
-ti fix run in console:
+To fix it run in console:
 
 ```bash
 sudo chmod -R 777 docker/mysql/data/db/
