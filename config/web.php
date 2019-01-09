@@ -15,9 +15,13 @@ $config = [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => '4gcSzNNPHp4WRzc8PQkSY4xwlbU_gMUX',
+            'parsers' => [
+                'application/json' => 'yii\web\JsonParser',
+            ],
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
+            //'class' => 'yii\caching\DummyCache',
         ],
         'user' => [
             'identityClass' => 'app\models\User',
@@ -43,16 +47,48 @@ $config = [
             ],
         ],
         'db' => $db,
-        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                /**
+                 * @see \app\controllers\api\ApiController
+                 */
+                'GET,HEAD api' => 'api/api/index',
+                'GET api/docs' => 'api/api/docs',
+                'GET api/json-schema' => 'api/api/json-schema',
+
+                'GET api/course' => 'api/api/course/index',
+                'POST api/course/create' => 'api/course/create',
+                'PUT api/course/update/<courseId:\d+>'=> '/api/course/update',
+                'DELETE api/course/delete/<courseId:\d+>'=> '/api/course/delete',
+
+                'GET api/lesson' => 'api/api/lesson/index',
+                'POST api/lesson/create' => 'api/lesson/create',
+                'PUT api/lesson/update/<lessonId:\d+>'=> '/api/lesson/update',
+                'DELETE api/course/delete/<lessonId:\d+>'=> '/api/lesson/delete',
+
+                'GET api/student' => 'api/api/student/index',
+                'POST api/student/create' => 'api/student/create',
+                'PUT api/student/update/<studentId:\d+>'=> '/api/student/update',
+                'DELETE api/student/delete/<studentId:\d+>'=> '/api/student/delete',
+
+                "lesson-student" => "lesson-student/index",
+
+                "home" => "site/index",
+                "about-us" => "site/about",
+                "contact-us" => "site/contact",
+
             ],
         ],
-        */
     ],
     'params' => $params,
+
+    'modules' => [
+        'menu' => [
+            'class' => '\pceuropa\menu\Menu',
+        ],
+    ]
 ];
 
 if (YII_ENV_DEV) {

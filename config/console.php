@@ -11,6 +11,7 @@ $config = [
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
+        '@tests' => dirname(__DIR__) . '/tests',
     ],
     'components' => [
         'cache' => [
@@ -30,15 +31,14 @@ $config = [
         'migration' => [
             'class' => 'bizley\migration\controllers\MigrationController',
         ],
-    ],
-    'params' => $params,
-    /*
-    'controllerMap' => [
         'fixture' => [ // Fixture generation command line.
             'class' => 'yii\faker\FixtureController',
+            'fixtureDataPath' => '@tests/unit/fixtures/data',
+            'templatePath' => '@tests/unit/templates/fixtures',
+            'namespace' => 'tests\unit\fixtures',
         ],
     ],
-    */
+    'params' => $params,
 ];
 
 if (YII_ENV_DEV) {

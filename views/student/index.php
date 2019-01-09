@@ -26,9 +26,22 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'student_id',
+            'id',
             'last_name',
             'first_name',
+            'course_id',
+            'title',
+            [
+                'label' => 'Lessons',
+                'format' => 'raw',
+                'value' => function ($data) {
+                    $result = '';
+                    foreach ($data->lessons as $element) {
+                        $result .= '<span class="tags tags_inactive">' . $element->title_about . '</span>';
+                    }
+                    return $result;
+                },
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

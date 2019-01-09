@@ -39,7 +39,11 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'About', 'url' => ['/site/about']],
+            ['label' => 'Student', 'url' => ['/student']],
+            ['label' => 'Course', 'url' => ['/course']],
+            ['label' => 'Lesson', 'url' => ['/lesson']],
+            ['label' => 'Lesson/Student', 'url' => ['/lesson-student']],
+
             ['label' => 'Contact', 'url' => ['/site/contact']],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/site/login']]
