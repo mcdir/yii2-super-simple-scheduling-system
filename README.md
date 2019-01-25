@@ -25,16 +25,16 @@ Student can attend only one of Course
 Course can have only one of Student
 
 # Operations
-~~Create/Edit/Delete Student~~
-~~Create/Edit/Delete Course~~
-~~Create/Edit/Delete Lesson~~
-~~Browse list of all Students~~
-~~Browse list of all Courses~~
-~~Browse list of all Lessons~~
+- ~~Create/Edit/Delete Student~~
+- ~~Create/Edit/Delete Course~~
+- ~~Create/Edit/Delete Lesson~~
+- ~~Browse list of all Students~~
+- ~~Browse list of all Courses~~
+- ~~Browse list of all Lessons~~
 
-~~View all Students assigned to a Lesson~~
-~~View all Lesson assigned to a Student~~
-~~Search Student/Lesson by available fields/associations~~
+- ~~View all Students assigned to a Lesson~~
+- ~~View all Lesson assigned to a Student~~
+- ~~Search Student/Lesson by available fields/associations~~
 
 # Security
 
@@ -72,9 +72,9 @@ docker-compose up
 ./init-project.sh
 ```
 
-Open in a browser http://localhost:8011/home
-Swagger API DOC http://localhost:8011/api/docs
-React front CRUD example app http://localhost:3000
+- Open in a browser http://localhost:8011/home
+- Swagger API DOC http://localhost:8011/api/docs
+- React front CRUD example app http://localhost:3000
 
 ## Update fixture
 
